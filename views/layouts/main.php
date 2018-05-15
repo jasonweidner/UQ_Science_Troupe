@@ -38,6 +38,9 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
+            ['label' => 'Users', 'url' => ['/user/index']],
+            ['label' => 'Club Members', 'url' => ['/club-members/index']],
+            ['label' => 'Community Members', 'url' => ['/community-members/index']],
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
