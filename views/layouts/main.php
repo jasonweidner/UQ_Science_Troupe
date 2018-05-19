@@ -44,14 +44,14 @@ AppAsset::register($this);
     ];
     
     if (Yii::$app->user->isGuest) {
-        array_push($navItems,['label' => 'Sign In', 'url' => ['/user/settings/networks']],['label' => 'Sign Up', 'url' => ['/user/registration/register']]);
+        array_push($navItems,['label' => 'Sign In', 'url' => ['/user/settings/profile']],['label' => 'Sign Up', 'url' => ['/user/registration/register']]);
     } else {
         array_push($navItems,
             ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
             'url' => ['/site/logout'],
             'linkOptions' => ['data-method' => 'post']],
             ['label' => 'Account',
-            'url' => ['/user/settings/networks']]
+            'url' => ['/user/settings/profile']]
         );
     }
 

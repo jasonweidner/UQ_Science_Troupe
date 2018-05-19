@@ -48,7 +48,6 @@ class ContactForm extends Model
      */
     public function contact($email)
     {
-
         $email = 'UQST.test@gmail.com';
         if ($this->validate()) {
             Yii::$app->mailer->compose()
