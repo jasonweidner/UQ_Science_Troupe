@@ -73,7 +73,11 @@ class LoginForm extends Model
     public function getUser()
     {
         if ($this->_user === false) {
-            $this->_user = User::findByUsername($this->username);
+            if (User::findByUsername($this->username) !== null){
+                $this->_user = User::findByUsername($this->username);
+            } else {
+                throw new NotFoundHttpException('The requested page does not exist.');
+            }
         }
 
         return $this->_user;
