@@ -33,6 +33,16 @@ $config = [
             'class' => 'yii\faker\FixtureController',
         ],
     ],*/
+
+    'modules' => [
+        'user' => [
+            'class' => 'dektrium\user\Module',
+            'enableUnconfirmedLogin' => true,
+            'confirmWithin' => 21600,
+            'cost' => 12,
+            'admins' => ['admin']
+        ]
+    ],
     
 ];
 

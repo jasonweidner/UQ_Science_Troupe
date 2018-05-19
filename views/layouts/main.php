@@ -44,7 +44,7 @@ AppAsset::register($this);
     ];
     
     if (Yii::$app->user->isGuest) {
-        array_push($navItems,['label' => 'Sign In', 'url' => ['/user/login']],['label' => 'Sign Up', 'url' => ['/user/register']]);
+        array_push($navItems,['label' => 'Sign In', 'url' => ['/user/settings/networks']],['label' => 'Sign Up', 'url' => ['/user/registration/register']]);
     } else {
         array_push($navItems,
             ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
@@ -63,20 +63,22 @@ AppAsset::register($this);
     NavBar::end();
     ?>
 
+
+/* MAIN CONTENT HERE */
     <div class="container">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= Alert::widget() ?>
-        <?= $content ?>
-    </div>
+        <?= $content ?> 
+     </div> 
 </div>
+
+
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-left">&copy; INFS7202 <?= date('Y') ?></p>
     </div>
 </footer>
 
