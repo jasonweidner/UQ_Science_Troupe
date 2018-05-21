@@ -26,6 +26,7 @@ $config = [
         ],
         'db' => $db,
     ],
+
     'params' => $params,
     
 /*    'controllerMap' => [
@@ -40,9 +41,9 @@ $config = [
             'enableUnconfirmedLogin' => true,
             'confirmWithin' => 21600,
             'cost' => 12,
-            'admins' => ['admin']
+            'admins' => ['jweidner']
         ]
-    ],
+    ]
     
 ];
 

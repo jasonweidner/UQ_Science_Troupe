@@ -26,7 +26,7 @@ class ContactForm extends Model
             [['name', 'email', 'subject', 'body'], 'required'],
             // email has to be a valid email address
             ['email', 'email'],
-            // // verifyCode needs to be entered correctly
+            // // // verifyCode needs to be entered correctly
             // ['verifyCode', 'captcha'],
         ];
     }
@@ -51,7 +51,7 @@ class ContactForm extends Model
         $email = 'UQST.test@gmail.com';
         if ($this->validate()) {
             Yii::$app->mailer->compose()
-                ->setTo($email) /*$email*/
+                ->setTo($email) 
                 ->setFrom([$this->email => $this->name])
                 ->setSubject($this->subject)
                 ->setTextBody($this->body)
