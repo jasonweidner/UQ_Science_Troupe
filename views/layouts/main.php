@@ -49,19 +49,19 @@ AppAsset::register($this);
     $navItems=[
         ['label' => 'Users', 'url' => ['/user/index']],
         ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']]
+        ['label' => 'About', 'url' => ['/site/about']]
     ];
     
     if (Yii::$app->user->isGuest) {
-        array_push($navItems,['label' => 'Sign In', 'url' => ['/user/settings/profile']],['label' => 'Sign Up', 'url' => ['/user/registration/register']]);
+        array_push($navItems,
+            ['label' => 'Sign In', 'url' => ['/user/settings/profile']],
+            ['label' => 'Sign Up', 'url' => ['/user/registration/register']]);
     } else {
         array_push($navItems,
+            ['label' => 'Contact', 'url' => ['/site/contact']],
             ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-            'url' => ['/site/logout'],
-            'linkOptions' => ['data-method' => 'post']],
-            ['label' => 'Account',
-            'url' => ['/user/settings/profile']]
+                'url' => ['/site/logout'],'linkOptions' => ['data-method' => 'post']],
+            ['label' => 'Account','url' => ['/user/settings/profile']]
         );
     }
 

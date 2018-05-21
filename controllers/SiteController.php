@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use mpdf;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
@@ -125,4 +126,19 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+    /**
+     * Defines pdf generation.
+     */
+    public function actionCreatempdf()
+    {  
+        $mpdf = new \Mpdf\Mpdf();
+        $mpdf->WriteHTML($this->renderPartial('pdf'));
+        $mpdf->Output();
+        exit;
+    }
+
+
+
+
 }
