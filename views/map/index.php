@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+// use controllers\MapController;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\MapSearch */
@@ -35,16 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 
-
-<!-- 
-<!DOCTYPE html>
-<html>
-  <head> -->
-<!--     <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">    
-  </head> -->
-<!--   <body> -->
+</div>
 
     <style>
       /* Always set the map height explicitly to define the size of the div
@@ -68,9 +60,27 @@ $this->params['breadcrumbs'][] = $this->title;
           center: {lat: -27.4954258, lng: 153.0098414},
           zoom: 12
         });
+
+
+
+        var marker = new google.maps.Marker({
+            position: {lat: -27.4954258, lng: 153.0098414},
+            map: map,
+            title: 'Hello World!'
+        });
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHxf6ELukFVk-CCXMUSeA1A7xCV64qm4k&callback=initMap"
-    async defer></script>
-<!--   </body>
-</html> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHxf6ELukFVk-CCXMUSeA1A7xCV64qm4k&callback=initMap" async defer>
+    </script>
+
+<?php
+
+// $d = MapController::actionLatLong();
+
+//         // for each member, create a new marker
+//         for ($i = 1; $i < count($d); $i++) {
+//             echo $d[$i-1];
+//         }
+
+
+

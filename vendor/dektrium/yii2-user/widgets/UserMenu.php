@@ -34,7 +34,7 @@ class UserMenu extends Widget
                 ['label' => Yii::t('user', 'PDF Account Details'), 'url' => ['/site/creatempdf']],
                 ['label' => Yii::t('user', 'Profile'), 'url' => ['/user/settings/profile']],
                 ['label' => Yii::t('user', 'Account'), 'url' => ['/user/settings/account']],
-                ['label' => Yii::t('user', 'Map of Members'), 'url' => ['/map/index']],
+                ['label' => Yii::t('user', 'Map of Members'), 'url' => ['/map/members']],
                 [
                     'label' => Yii::t('user', 'Networks'),
                     'url' => ['/user/settings/networks'],

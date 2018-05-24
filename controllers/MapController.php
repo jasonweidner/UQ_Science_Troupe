@@ -45,6 +45,33 @@ class MapController extends Controller
     }
 
     /**
+     * Lists all Map models.
+     * @return mixed
+     */
+    public function actionMembers()
+    {
+        $searchModel = new MapSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        // $d = MapController::actionLatLong();
+
+        // // for each member, create a new marker
+        // for ($i = 1; $i < count($d); $i++) {
+        //     echo $d[$i-1];
+        // }
+
+        // foreach ($model as $name => $value) {
+        //   echo "$name: $value\n";
+        // }
+
+        return $this->render('members', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+
+    /**
      * Displays a single Map model.
      * @param integer $id
      * @return mixed
@@ -65,7 +92,7 @@ class MapController extends Controller
     public function actionCreate()
     {
         $model = new Map();
-        
+
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -125,4 +152,16 @@ class MapController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+    /**
+     * Provides all lats and longs of members.
+     */
+    public function actionLatLongs()
+    {
+        $latlongs = Maps::find()->asArray()->all();
+
+        return $latlongs;
+    }
+
+
 }

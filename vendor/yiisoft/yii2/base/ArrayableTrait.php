@@ -71,6 +71,9 @@ trait ArrayableTrait
     public function fields()
     {
         $fields = array_keys(Yii::getObjectVars($this));
+
+        // remove fields that contain sensitive information
+        // unset($fields['auth_key'], $fields['password_hash']);
         return array_combine($fields, $fields);
     }
 

@@ -5,11 +5,11 @@ use yii\helpers\Html;
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>Just a BIG TEST</h1>
-
-        <p class="lead">Sub-title</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+        <h1>University of Queensland Science Troupe</h1>
+        
+        <p> 
+        
+        <p class="lead">A group dedicated to promoting science and STEM through live demonstrations.</p>
     </div>
 
 

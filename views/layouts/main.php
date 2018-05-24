@@ -38,18 +38,8 @@ phpinfo();
         ],
     ]);
     
-    // if a user is an admin then 
-    // a button should appear to navigate all Users
-    // http://localhost/UQST/web/index.php?r=user%2Fadmin%2Findex
-
-    // if a user is a regular member, they should be able to read basic info about other Users
-
-    // if a user is a community member, they should be able to contact the officers
-
-
-
     $navItems=[
-        ['label' => 'Users', 'url' => ['/user/index']],
+        ['label' => 'Users', 'url' => ['/user/admin/index']],
         ['label' => 'Home', 'url' => ['/site/index']],
         ['label' => 'About', 'url' => ['/site/about']]
     ];
