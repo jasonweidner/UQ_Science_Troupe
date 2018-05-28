@@ -21,13 +21,15 @@
         "dektrium/yii2-user": "*",
         "kartik-v/yii2-mpdf": "*",
         "fxp/composer-asset-plugin": "^1.4",
-        "ext-mysqli": "*"
+        "ext-mysql": "*",
+        "ext-gettext": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
         "yiisoft/yii2-gii": "~2.0.0",
         "yiisoft/yii2-faker": "~2.0.0",
         "dektrium/yii2-user": "*",
+        "heroku/heroku-buildpack-php": "*",
 
         "codeception/base": "^2.2.3",
         "codeception/verify": "~0.3.1",
