@@ -29,11 +29,12 @@ $config = [
 
     'params' => $params,
     
-/*    'controllerMap' => [
+    'controllerMap' => [
         'fixture' => [ // Fixture generation command line.
             'class' => 'yii\faker\FixtureController',
         ],
-    ],*/
+
+    ],
 
     'modules' => [
         'user' => [
@@ -41,7 +42,7 @@ $config = [
             'enableUnconfirmedLogin' => true,
             'confirmWithin' => 21600,
             'cost' => 12,
-            'admins' => ['jweidner']
+            'admins' => ['jweidner', 'bcave96']
         ]
     ]
     

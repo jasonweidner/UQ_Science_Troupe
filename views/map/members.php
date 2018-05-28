@@ -10,7 +10,7 @@ use yii\grid\GridView;
 $this->title = 'Maps of Members';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-
+<input type="hidden" value='<?= $location ?>' id="location">
 <div class="pdf-dealer container">
     <table class="table table-bordered">
         <thead>
@@ -45,20 +45,27 @@ $this->params['breadcrumbs'][] = $this->title;
   }
 </style>
 
-<div id="map"></div>
+<div id="map" style="width:500px;height:500px;"></div>
   <script>
     var map;
     function initMap() {
-     map = new google.maps.Map(document.getElementById('map'), {
-       center: {lat: -27.4954258, lng: 153.0098414},
-       zoom: 12
-     });
+         var str_location = document.getElementById('location').value;
+         var arr_location = str_location!=='' ? JSON.parse(str_location): [];
+         map = new google.maps.Map(document.getElementById('map'), {
+           center: {lat: -27.4954258, lng: 153.0098414},
+           zoom: 4
+         });
 
-     var marker = new google.maps.Marker({
-         position: {lat: -27.4954258, lng: 153.0098414},
-         map: map,
-         title: 'Hello World!'
-     });
+         for (var i=0; i<arr_location.length; i++)
+         {
+              var location = arr_location[i];
+              //console.log({lat: parseFloat(location.lat), lng: parseFloat(location.lng)});
+             var marker = new google.maps.Marker({
+                 position: {lat: parseFloat(location.lat), lng: parseFloat(location.lng)},
+                 map: map,
+                 title: 'Hello World!'
+             });  
+         }
     }
   </script>
      
@@ -67,17 +74,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <?php
 
-// $d = MapController::actionLatLong();
-
-//         // for each member, create a new marker
-//         for ($i = 1; $i < count($d); $i++) {
-//             echo $d[$i-1];
-//         }
-
-
-    // foreach ($model as $name => $value) {
-    //   echo "$name: $value\n";
-    // }
 
 
 

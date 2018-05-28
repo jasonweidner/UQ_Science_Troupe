@@ -12,7 +12,6 @@ use app\assets\AppAsset;
 
 AppAsset::register($this);
 ?>
-phpinfo();
 
 <?php $this->beginPage() ?>
 <!DOCTYPE html>

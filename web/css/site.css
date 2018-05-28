@@ -21,13 +21,10 @@ body {
     padding-top: 20px;
 }
 
-/*.jumbotron {
-    
-}*/
-
-.mainjumbotron {
+.jumbotron {
    text-align: center;
-   background-color: #E64545;
+   background-color: #520096;
+   color: white;
 }
 
 .jumbotron .btn {

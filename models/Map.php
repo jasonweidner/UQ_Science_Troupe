@@ -49,4 +49,9 @@ class Map extends \yii\db\ActiveRecord
             'user_id' => 'User ID',
         ];
     }
+
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id'=>'user_id']);
+    }
 }

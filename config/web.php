@@ -19,24 +19,19 @@ $config = [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-/*        'user' => [
-            'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true,
-        ],*/
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             'viewPath' => '@app/mailer',
-            /*'viewPath' => '@common/mail',*/
             'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.gmail.com', /*'mailhub.eait.uq.edu.au'*/
+                'host' => 'smtp.gmail.com', 
                 'username' => 'UQST.test@gmail.com',
                 'password' => 'ReallySimple2',
-                'port' => '587', /*465*/
+                'port' => '587', 
                 'encryption' => 'tls',
                             ],
         ],
@@ -52,25 +47,36 @@ $config = [
         'db' => $db,
         
         'urlManager' => [
-            'enablePrettyUrl' => false,
-            'showScriptName' => true,
+            //'class' => 'yii\web\UrlManager',
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
             'rules' => [
-            ],
+                '<controller:\w+>/<id:\d+>' => '<controller>/view',
+                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+            ]
         ],
         
     ],
     
     'params' => $params,
+
+    'controllerMap' => [
+        'fixture' => [ // Fixture generation command line.
+            'class' => 'yii\faker\FixtureController',
+        ],
+
+    ],
     
     'modules' => [
         'user' => [
-        'class' => 'dektrium\user\Module',
-        'enableUnconfirmedLogin' => true,
-        'confirmWithin' => 21600,
-        'cost' => 12,
-        'admins' => ['jweidner', 'coreilly', 'bcave96']
+            'class' => 'dektrium\user\Module',
+            'enableUnconfirmedLogin' => true,
+            'confirmWithin' => 21600,
+            'cost' => 12,
+            'admins' => ['jweidner', 'coreilly', 'bcave96']
+        ],
     ],
-],
 ];
 
 if (YII_ENV_DEV) {

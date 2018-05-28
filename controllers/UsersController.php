@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * UserController implements the CRUD actions for User model.
  */
-class UserController extends Controller
+class UsersController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -29,20 +29,29 @@ class UserController extends Controller
         ];
     }
 
-    /**
-     * Lists all User models.
-     * @return mixed
-     */
+    // /**
+    //  * Lists all User models.
+    //  * @return mixed
+    //  */
+    // public function actionIndex()
+    // {
+    //     $searchModel = new UserSearch();
+    //     $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+    //     return $this->render('test', [
+    //         'searchModel' => $searchModel,
+    //         'dataProvider' => $dataProvider,
+    //     ]);
+    // }
+
+
     public function actionIndex()
     {
-        $searchModel = new UserSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+        $users = User::find()->all();
+        // return $this->render('index');
+         return $this->render('test',['users'=>$users]);
     }
+
 
     /**
      * Displays a single User model.
