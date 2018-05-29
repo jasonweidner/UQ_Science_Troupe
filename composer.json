@@ -15,6 +15,7 @@
     "minimum-stability": "stable",
     "require": {
         "yiisoft/yii2-debug": "~2.0.0",
+        "heroku/heroku-buildpack-php": "*",
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0.14",
         "yiisoft/yii2-bootstrap": "~2.0.0",
@@ -33,17 +34,7 @@
 
         "codeception/base": "^2.2.3",
         "codeception/verify": "~0.3.1",
-        "codeception/specify": "~0.4.3",
-
-
-
-
-        "ext-mbstring": "*",
-        "ext-gd": "*",
-        "yiisoft/yii2-dev": "*",
-        "fxp/composer-asset-plugin": "*"
-
-
+        "codeception/specify": "~0.4.3"
     },
     "config": {
         "process-timeout": 1800,
