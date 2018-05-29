@@ -21,9 +21,7 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0",
         "dektrium/yii2-user": "*",
         "kartik-v/yii2-mpdf": "*",
-        "fxp/composer-asset-plugin": "^1.4",
-        "ext-mysql": "*",
-        "ext-gettext": "*"
+        "fxp/composer-asset-plugin": "^1.4"
     },
     "require-dev": {
         "yiisoft/yii2-gii": "~2.0.0",
