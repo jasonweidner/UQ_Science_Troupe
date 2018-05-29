@@ -3,8 +3,8 @@
 return [
     'class' => 'yii\db\Connection',
     'dsn' => '', //mysql:host=localhost;dbname=uqst_db',
-    'username' => 'root',
-    'password' => 'Reallysimple2',
+    'username' => 'b8e1b3c71ef49d', //root
+    'password' => '91892833', //Reallysimple2
     'charset' => 'utf8',
     
 
